@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartAuth.View.VisualizarUsuarios" 
+             BackgroundColor="#EDEDED"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" 
+                    Padding="8,10">
+            <StackLayout x:Name="loader" 
+                         HorizontalOptions="CenterAndExpand" 
+                         VerticalOptions="CenterAndExpand">
+                <Label Text="Carregando informações, por favor aguarde" 
+                       TextColor="Black" 
+                       FontSize="Large" 
+                       WidthRequest="220"
+                       HorizontalTextAlignment="Center"/>
+                <ActivityIndicator IsRunning="True" 
+                                   HeightRequest="70"/>
+            </StackLayout>
+            <StackLayout x:Name="listView" 
+                         IsVisible="False">
+                <Label Text="Usuário cadastrados" 
+                       TextColor="Black" 
+                       FontSize="30" 
+                       HorizontalTextAlignment="Center"
+                       Padding="50,15"/>
+                <ListView x:Name="list"
+                      CachingStrategy="RecycleElement"
+                      HorizontalScrollBarVisibility="Always"
+                      SeparatorColor="Gray"
+                      RowHeight="50"
+                      BackgroundColor="LightGray"
+                      ItemTapped="List_ItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Margin="8"
+                                             Padding="5"
+                                             Orientation="Horizontal">
+                                    <Label Text="Nome:" 
+                                           TextColor="Black" 
+                                           FontAttributes="Bold"/>
+                                    <Label Text="{Binding Nome}" 
+                                           TextColor="Black"/>
+                                    <Label Text="{Binding Sobrenome}" 
+                                           TextColor="Black"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button Text="Voltar ao início" 
+                        HorizontalOptions="Center"
+                        CornerRadius="5"
+                        TextColor="White"
+                        BackgroundColor="OrangeRed"
+                        HeightRequest="40"
+                        Clicked="VoltarInicio_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

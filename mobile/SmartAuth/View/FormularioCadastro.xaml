@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartAuth.View.FormularioCadastro"
+             BackgroundColor="#EDEDED"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout 
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand"
+        >
+            <!-- Loader -->
+            <StackLayout x:Name="loader" IsVisible="True">
+                <Label Text="Processando informações, por favor aguarde" 
+                       WidthRequest="180"
+                       HorizontalTextAlignment="Center"
+                       TextColor="Black"/>
+                <ActivityIndicator IsRunning="True"/>
+            </StackLayout>
+
+            <!-- Logging Error -->
+            <StackLayout x:Name="error" IsVisible="False">
+                <Image Source="error.png" HeightRequest="80"/>
+                <Label Text="Ops, algo deu errado!" 
+                       WidthRequest="180"
+                       HorizontalTextAlignment="Center"
+                       FontSize="Large"
+                       TextColor="Black"/>
+                
+                <BoxView HeightRequest="15"/>
+                
+                <Label x:Name="errorMsg" 
+                       Text="Mensagem de erro" 
+                       HorizontalTextAlignment="Center" 
+                       WidthRequest="200"
+                       TextColor="Black"/>
+                
+                <BoxView HeightRequest="15"/>
+
+                <StackLayout Orientation="Vertical"
+                             WidthRequest="150">
+                    <Button Text="Tentar novamente" 
+                        BackgroundColor="#FF4948"
+                        TextColor="White"
+                        CornerRadius="5"
+                        HeightRequest="40"
+                        Clicked="TentarNovamente_Clicked" />
+                    <Button Text="Nova foto" 
+                        BackgroundColor="#15467E"
+                        TextColor="White"
+                        CornerRadius="5"
+                        HeightRequest="40"
+                        Clicked="NovaFoto_Clicked"/>
+                </StackLayout>
+                
+            </StackLayout>
+
+            <!-- User Information Form -->
+            <StackLayout x:Name="form" IsVisible="False">
+                <Label Text="Confirme as informações extraídas"
+                   VerticalTextAlignment="Start"
+                   HorizontalTextAlignment="Start"
+                   FontSize="Large"
+                   WidthRequest="100"
+                   TextColor="Black"/>
+
+                <Entry x:Name="entry_nome" 
+                   Placeholder="Seu primeiro nome"
+                   TextColor="Black"
+                   Text="ddaa"
+                   WidthRequest="250"/>
+                <Entry x:Name="entry_sobrenome" 
+                   Placeholder="Seu sobrenome" 
+                   TextColor="Black"
+                   WidthRequest="250"/>
+                <DatePicker x:Name="dp_dtNasc"
+                            TextColor="Black"/>
+                <Entry x:Name="entry_rg" 
+                   Placeholder="Seu RG" 
+                   TextColor="Black"
+                   WidthRequest="250"/>
+                <Entry x:Name="entry_cpf" 
+                   Placeholder="Seu CPF (###.###.###-##)" 
+                   TextColor="Black"
+                   WidthRequest="250"/>
+
+                <BoxView HeightRequest="15" />
+
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Cancelar"
+                        HorizontalOptions="StartAndExpand"
+                        BackgroundColor="#FF4948"
+                        TextColor="White"
+                        CornerRadius="5"
+                        Clicked="Cancelar_Clicked" />
+                    <Button Text="Confirmar" 
+                        HorizontalOptions="EndAndExpand"
+                        BackgroundColor="#087829"
+                        TextColor="White"
+                        CornerRadius="5"
+                        Clicked="Confirmar_Clicked"/>
+                </StackLayout>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

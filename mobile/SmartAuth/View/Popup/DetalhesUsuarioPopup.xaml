@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SmartAuth.View.Popup.DetalhesUsuarioPopup"
+             BackgroundColor="Gray">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            PositionIn="Center" 
+            PositionOut="Center"
+            ScaleIn="1.2" ScaleOut="0.8"
+            DurationIn="400" DurationOut="300"
+            EasingIn="SinOut" EasingOut="SinIn"
+            HasBackgroundAnimation="False"/>
+    </pages:PopupPage.Animation>
+
+    <StackLayout HorizontalOptions="CenterAndExpand" 
+                 VerticalOptions="CenterAndExpand">
+        <Frame CornerRadius="15"
+               BackgroundColor="#EDEDED">
+            <StackLayout VerticalOptions="Center" 
+                         HorizontalOptions="FillAndExpand">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="INFORMAÇÕES DO USUÁRIO" 
+                           TextColor="Black"
+                           FontSize="15"
+                           FontAttributes="Bold"/>
+                </StackLayout>
+                <BoxView HorizontalOptions="FillAndExpand" 
+                         HeightRequest="0.1" 
+                         Color="Gray" />
+
+                <BoxView HeightRequest="10"/>
+                
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Nome:" 
+                               FontAttributes="Bold" 
+                               FontSize="15" 
+                               TextColor="Black"/>
+                        <Label x:Name="lbl_nome" 
+                               TextColor="Black"
+                               FontSize="15"/>
+
+                        <BoxView WidthRequest="15"/>
+
+                        <Label Text="Sobrenome:" 
+                               FontAttributes="Bold" 
+                               FontSize="15" 
+                               TextColor="Black"/>
+                        <Label x:Name="lbl_sobrenome" 
+                            TextColor="Black"
+                            FontSize="15"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Email:" 
+                               FontAttributes="Bold" 
+                               FontSize="15" 
+                               TextColor="Black"/>
+                        <Label x:Name="lbl_email" 
+                                TextColor="Black"
+                                FontSize="15"/>
+                        <BoxView WidthRequest="15"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="RG:" 
+                               FontAttributes="Bold" 
+                               FontSize="15" 
+                               TextColor="Black"/>
+                        <Label x:Name="lbl_rg" 
+                               TextColor="Black"
+                               FontSize="15"/>
+
+                        <BoxView WidthRequest="15"/>
+
+                        <Label Text="CPF:" 
+                               FontAttributes="Bold" 
+                               FontSize="15" 
+                               TextColor="Black"/>
+                        <Label x:Name="lbl_cpf" 
+                            TextColor="Black"
+                            FontSize="15"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Data de Nasc:" 
+                               FontAttributes="Bold" 
+                               FontSize="15" 
+                               TextColor="Black"/>
+                        <Label x:Name="lbl_dtNasc" 
+                               TextColor="Black"
+                               FontSize="15"/>
+
+                        <BoxView WidthRequest="15"/>
+
+                        <Label Text="Data de Cadastro:" 
+                               FontAttributes="Bold" 
+                               FontSize="15" 
+                               TextColor="Black"/>
+                        <Label x:Name="lbl_dtCad" 
+                            TextColor="Black"
+                            FontSize="15"/>
+                    </StackLayout>
+
+                    <BoxView HeightRequest="25"/>
+                    
+                    <Button Text="Fechar" 
+                            Clicked="Fechar_Clicked"
+                            CornerRadius="5"
+                            HeightRequest="40"
+                            BackgroundColor="OrangeRed"
+                            TextColor="White"/>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+
+</pages:PopupPage>

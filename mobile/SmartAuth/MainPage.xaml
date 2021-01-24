@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartAuth.MainPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <StackLayout BackgroundColor="#2D46B9">
+        <StackLayout>
+            <Label 
+                FontSize="40"
+                HorizontalTextAlignment="Center"
+                Padding="10"
+                TextColor="#1ED760"
+            >
+                SmartAuth
+            </Label>
+        </StackLayout>
+        <StackLayout 
+            Orientation="Vertical" 
+            HorizontalOptions="CenterAndExpand" 
+            VerticalOptions="CenterAndExpand"
+        >
+            <Button 
+                BackgroundColor="#1ED760" 
+                HeightRequest="180" 
+                WidthRequest="180"
+                CornerRadius="20"
+                Text="Cadastrar"
+                FontSize="Large"
+                TextColor="#2D46B9"
+                Clicked="Cadastrar_Clicked"
+            />
+
+            <BoxView HeightRequest="40"/>
+
+            <Button 
+                BackgroundColor="#191414" 
+                HeightRequest="180" 
+                WidthRequest="180"
+                CornerRadius="20"
+                Text="Visualizar cadastros"
+                FontSize="Large"
+                TextColor="White"
+                Clicked="VisualizarCadastro_Clicked"
+            />
+
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
